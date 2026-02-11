@@ -5,13 +5,13 @@ class Solution {
         int i = 0;
         int n = intervals.length;
 
-        // Step 1: Add all intervals before newInterval
+        // Add all intervals 
         while (i < n && intervals[i][1] < newInterval[0]) {
             res.add(intervals[i]);
             i++;
         }
 
-        // Step 2: Merge overlapping intervals
+        //  Merge overlapping 
         while (i < n && intervals[i][0] <= newInterval[1]) {
             newInterval[0] = Math.min(newInterval[0], intervals[i][0]);
             newInterval[1] = Math.max(newInterval[1], intervals[i][1]);
@@ -21,12 +21,13 @@ class Solution {
         // Add merged interval
         res.add(newInterval);
 
-        // Step 3: Add remaining intervals
+        // Add remaining 
         while (i < n) {
             res.add(intervals[i]);
             i++;
         }
 
+        // to 2d array 
         return res.toArray(new int[res.size()][]);
     }
 }
