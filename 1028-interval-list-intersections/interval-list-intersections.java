@@ -26,11 +26,15 @@ class Solution {
                 j=j+1;
             }
         }
+        /*
         int [][] ans = new int[res.size()][2];
 
         for(int k = 0 ; k<res.size(); k=k+1){
             ans[k]=res.get(k);
         }
         return ans;
+        */
+
+        return res.toArray(new int[res.size()][]);
     }
 }
